@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Structure of locally out-transitive}{11}{0}{1}
+\beamer@sectionintoc {2}{Colouring locally out-transitive}{35}{0}{2}
+\beamer@sectionintoc {3}{Caccetta-H\"aggkvist\xspace }{47}{0}{3}
+\beamer@sectionintoc {4}{What comes next ?}{58}{0}{4}

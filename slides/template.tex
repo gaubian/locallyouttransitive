@@ -326,8 +326,8 @@
 	    \end{definition}
 
 
-
             \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=3]
+
             \draw [->-] (-0.62,0.32) -- (0.13,0.5);
             \draw [->-] (0.13,0.5) to[bend left = 13] (-0.11,-0.24);
             \draw [->-] (-0.11,-0.24) -- (0.49,-0.12);
@@ -398,10 +398,9 @@
 \begin{frame}{Some classes of digraphs}
     \centering
     \begin{itemize}
-        \item Oriented graphs : $\F{(K_{2})}$
-        \item Tournaments : $\F{(K_{2},K_{2})}$
-        \item $TT_{k}$ : $\F{(K_{2},K_{2},C_{3})}$
-        \item Hero : $H$ such that $\dic(\F{(K_{2},K_{2},C_{3})})$ bounded
+        \item Tournaments : $\F{(\{\ova{K_{2}}\})}$
+        \item Transitive tournaments : $\F{(\{\ova{K_{2}},C_{3}\})}$
+        \item Hero : $H$ such that $\dic(\F{(\{\ova{K_{2}},H\})})$ bounded
     \end{itemize}
 \end{frame}
 
@@ -409,15 +408,15 @@
         \begin{block}{Conjecture (Aboulker, Charbit, Naserasr, 2020)}
         $H$ hero, $F$ oriented forest
 
-        $\dic(\F{K_{2},H,F})$ bounded if and only if:
+        $\dic(\F{(\{H,F\})})$ bounded if and only if:
 
         \begin{itemize}
-            \item $F$ is the disjoint union of stars or
+            \item $F$ is a disjoint union of stars or
             \item $H$ is transitive
         \end{itemize}
         \end{block}
 
-    \only<2>{$$H \in \{ K_1 , K_2 \}, F \in \{ K_1 , K_2 \} \rightarrow \text{Trivial}$$}
+    \only<2>{$$H \in \{ K_1 , \ora{K_2} \}, F \in \{ K_1 , \ora{K_2} \} \implies \text{Trivial}$$}
 %\end{frame}
 
 
@@ -466,11 +465,11 @@ Thus, easiest remaining case :
 
 \end{frame}
 
-\begin{frame}{Our result}
+\begin{frame}{Colouring $\F{(\{K_{1,2},W_4\})}$}
 
-    \begin{theorem}
-        $\dic(\F{(K_2,K_{1,2},W_4)}) \leq 2$
-    \end{theorem}
+    \begin{block}{Theorem (Aboulker, Aubian, Charbit / Steiner, 2021)}
+        $\dic(\F{(\{K_{1,2},W_4\})}) \leq 2$
+    \end{block}
 
     \hspace{1cm}
 
@@ -516,28 +515,30 @@ Thus, easiest remaining case :
 
 \begin{frame}{locally out-transitive}
 \begin{itemize}
-    \item $\F{(\{W_4\})}$ $\rightarrow$ out-neighbourhood triangle-free
-    \item $\F{(\{K_{1,2}\})}$ $\rightarrow$ out-neighbourhood semicomplete
+    \item $\F{(\{K_{1,2}\})}$ $\implies$ out-neighbourhood tournament
+    \item $\F{(\{W_4\})}$ $\implies$ out-neighbourhood $C_{3}$-free
 \end{itemize}
 
-Thus $\F{(\{K_2,W_4,K_{1,2}\})}$ $\rightarrow$ out-neighbourhood transitive
+Thus $\F{(\{W_4,K_{1,2}\})}$ $\implies$ out-neighbourhood transitive
 
 We call these \emph{locally out-transitive}
 \end{frame}
 
 \begin{frame}{Proof structure}
 \begin{enumerate}
-    \item Decomposition theorem for $\F{(K_2,W_4,K_{1,2})}$
+    \item Decomposition theorem for $\F{(\{W_4,K_{1,2}\})}$
     \item \begin{itemize}
-            \item Use this to prove $\dic(\F{(K_2,K_{1,2},W_4)}) \leq 2$
-            \item Prove Caccetta-\Hag for $\F{(K_2,K_{1,2},W_4)}$
+            \item Use this to prove $\dic(\F{(\{K_{1,2},W_4\})}) \leq 2$
+            \item Prove Caccetta-\Hag for $\F{(\{K_{1,2},W_4\})}$
           \end{itemize}
 \end{enumerate}
 
-These results are thus implied for $\F{(K_2,K_{1,2},C_3)}$
+These results are thus implied for $\F{(\{K_{1,2},C_3\})}$
 \end{frame}
 
-\begin{frame}{in-round oriented graphs}
+\section{Structure of locally out-transitive}
+
+\begin{frame}{In-round oriented graphs}
 \begin{definition}
 An oriented graph $D=(V,A)$ is in-round if there exists a cyclic order of $V$ such that :
 
@@ -549,7 +550,7 @@ $$\forall xy\in A, \forall z\in ]x,y[, zy\in A$$
 \includegraphics[scale=0.5]{Images/inround.pdf}
 \end{frame}
 
-\begin{frame}{in-round theorem}
+\begin{frame}{In-round theorem}
 \begin{theorem}
 Let $D$ be a strong oriented graph such that for every vertex $x$, $x^+$ induces a tournament and $x^-$ induces an acyclic digraph. Then $D$ is in-round.
 \end{theorem}
@@ -562,6 +563,8 @@ Let $D$ be a strong oriented graph such that for every vertex $x$, $x^+$ induces
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=2]
 
         \begin{scope}
+            \node at (-0.72,0.32) {$x$};
+            \node at (0.79,-0.12) {$f(x)$};
             \draw [->-] (0.13,0.5) -- (-0.62,0.32);
             \draw [->-] (-0.11,-0.24) -- (-0.62,0.32);
             \draw [->-,red] (0.49,-0.12) --(-0.62,0.32);
@@ -621,7 +624,7 @@ Let $D$ be a strong oriented graph such that for every vertex $x$, $x^+$ induces
     \end{tikzpicture}
     }
 
-    \only<3>{
+    \only<4>{
 
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=2]
         \begin{scope}
@@ -641,7 +644,7 @@ Let $D$ be a strong oriented graph such that for every vertex $x$, $x^+$ induces
     \end{tikzpicture}
     }
 
-    \only<4>{
+    \only<3>{
 
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=2]
         \begin{scope}
@@ -666,31 +669,211 @@ Let $D$ be a strong oriented graph such that for every vertex $x$, $x^+$ induces
 
 \end{frame}
 
+\begin{frame}{The hamiltonian cycle induces an in-round}
+\centering
+\only<1>{\includegraphics[scale=0.8]{Images/inround_cycle_0.png}}
+\only<2>{\includegraphics[scale=0.8]{Images/inround_cycle_1.png}}
+\only<3>{\includegraphics[scale=0.8]{Images/inround_cycle_2.png}}
+\only<4>{\includegraphics[scale=0.8]{Images/inround_cycle_3.png}}
+\end{frame}
+
 \begin{frame}{Decomposition theorem}
 
 \begin{theorem}
 Let $D$ a strong locally out-transitive oriented graph. There exists a partition of its set of vertices into strong subdigraphs whose contraction yields a strong in-round oriented graph.
 \end{theorem}
 
-\pause
+\only<1> {
+\centering
 
+\includegraphics[scale=0.4]{Images/decomposition.png}
+}
+
+\only<2> {
 \textbf{Proof :}
 
 \begin{definition}
 \emph{hub} : a strongly connected in-dominated subdigraph
 \end{definition}
+}
 
 \end{frame}
 
 \begin{frame}{Decomposition proof}
+
+\centering
+
+\only<2-> {
+\begin{block}{Claim}
 No vertex is mixed to a maximal hub
+\end{block}
+}
 
-DESSINS
+\only<1> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    %\draw [->-] (0,-1) -- (3,0);
+    %\draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    %\fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
 
-Thus we can partition vertices into hubs whose contraction yiels an in-round oriented graph.
+\only<2> {
+
+
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+
+
+\end{tikzpicture}
+
+}
+
+\only<3> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \draw [->-,red] (3,0) -- (-3,0);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
+
+\only<4> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \draw [->-] (-3,0) to[bend left = 55]  (3,0);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
+
+\only<5> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \draw [->-] (-3,0) to[bend left = 55]  (3,0);
+    \draw [->-] (0,-1) to[bend left =55] (0,0);
+    \draw [->-] (0,0) to[bend right = 55] (0,1);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
+
+
+\only<6> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \draw [->-] (-3,0) to[bend left = 55]  (3,0);
+    \draw [->-] (0,-1) -- (0,-0.3);
+    \draw  (0,-0.3) to[bend left =55] (0,0.4);
+    \draw [->-] (0,0.4) to[bend right = 55] (0,1);
+    \fill (0,-0.3) circle (3pt);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
+
+\only<7> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \draw [->-] (-3,0) to[bend left = 55]  (3,0);
+    \draw [->-] (0,-1) -- (0,-0.3);
+    \draw  (0,-0.3) to[bend left =55] (0,0.4);
+    \draw [->-] (0,0.4) to[bend right = 55] (0,1);
+    \draw (0,-0.3) -- (3,0);
+    \fill (0,-0.3) circle (3pt);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
+
+
+\only<8> {
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45, scale=1]
+    \draw (0,0) circle (2 cm);
+    \draw [->-] (0,-1) -- (3,0);
+    \draw [->-] (3,0) -- (0,1);
+    \draw [->-] (0,-1) -- (-3,0);
+    \draw [->-] (0,1) -- (-3,0);
+    \draw [->-] (-3,0) to[bend left = 55]  (3,0);
+    \draw [->-] (0,-1) -- (0,1);
+    \fill (0,-1) circle (3pt);
+    \fill (0,1) circle (3pt);
+    \fill (-3,0) circle (3pt);
+    \fill (3,0) circle (3pt);
+\end{tikzpicture}
+}
+
+\only<9> {
+\begin{block}{Claim}
+Contracting a maximal hub cannot create a $K_{1,2}$ nor a $W_{4}$.
+\end{block}
+
+Thus contracting a maximal hub yields a locally out-transitive oriented graph.
+}
+
 \end{frame}
 
-\begin{frame}{Coloring in-rounds}
+\begin{frame}{Decomposition theorem's proof}
+
+\begin{theorem}
+Let $D$ a strong locally out-transitive oriented graph. There exists a partition of its set of vertices into strong subdigraphs whose contraction yields a strong in-round oriented graph.
+\end{theorem}
+
+\begin{itemize}
+    \item if there exists a non-trivial hub, contract it and recurse
+    \item otherwise, inneighbourhoods are acyclic, thus $D$ is in-round
+\end{itemize}
+
+
+\end{frame}
+
+\section{Colouring locally out-transitive}
+
+\begin{frame}{Colouring in-rounds}
 
 \begin{theorem}
 In-round oriented graphs are 2-dicolourable.
@@ -718,6 +901,170 @@ For any in-round oriented graph $G$ and vertex $v$, $G$ admits a $2$-dicolouring
 
 
 
+\end{frame}
+
+\begin{frame}{Colouring locally out-transitive}
+
+\only<1>{
+\begin{block}{Theorem}
+For any locally out-transitive oriented graph $D$, $D$ admits a $2$-dicolouring.
+\end{block}
+}
+
+\only<2>{
+\begin{block}{Theorem}
+For any locally out-transitive oriented graph $D$ \textbf{and transitive subtournament $T$}, $D$ admits a $2$-dicolouring \textbf{in which T is monochromatic}.
+\end{block}
+}
+
+\end{frame}
+
+\begin{frame}{Colouring locally out-transitive : proof}
+
+\begin{block}{Theorem}
+For any locally out-transitive oriented graph $D$ and transitive subtournament $T$, $D$ admits a $2$-dicolouring in which T is monochromatic.
+\end{block}
+
+\only<1> {
+\centering
+\includegraphics[scale=0.5]{Images/decomposition.png}
+}
+
+\only<2> {
+\centering
+\includegraphics[scale=0.5]{Images/decomposition_with_arrivals.png}
+}
+
+\only<3> {
+\centering
+\includegraphics[scale=0.5]{Images/decomposition_with_tournament.png}
+}
+
+\only<4> {
+\centering
+\includegraphics[scale=0.5]{Images/decomposition_with_choice.png}
+}
+
+\only<5> {
+\centering
+\includegraphics[scale=0.5]{Images/decomposition_with_colouring.png}
+}
+\end{frame}
+
+\section{Caccetta-\Hag}
+
+\begin{frame}{Caccetta-\Hag}
+
+\begin{block}{Conjecture, (Caccetta-\Hag)}
+Let $k\geq 2$ be an integer. Every digraph $D$ on $n$ vertices with no directed circuit of length at most $k$ contains a vertex of out-degree less than $n/k$.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Caccetta-\Hag : proof}
+
+\begin{block}{Theorem}
+Let $D = (V,A)$ a strong locally in-tournament oriented graph without $C_3$, 
+%strong digraph in $\F(\ovlra{K_2}, C_3, S^-_2)$, 
+there exists a partition of $V$ into strong
+subdigraphs whose contraction yields a strong out-round oriented graph $D'$,
+ i.e. it admits a cyclic order such that :
+
+$\forall x,y,z\in V(D')\  (xy\in A \land  z\in ]x,y[  )\ \Ra\ xz\in A
+$
+\end{block}
+
+\centering
+
+\includegraphics[scale=0.4]{Images/decomposition_reversed.png}
+\end{frame}
+
+\begin{frame}{Reformulating our theorem}
+\begin{block}{Lemma}
+Let $k>2$, $D$ a strong out-round oriented graph with no $C_k$ and $w : V(D) \rightarrow \mathbb{R}^{+}$ and $W = \sum_{u \in V(D)} u$.
+
+$\text{There exists }u\text{ such that }\sum_{v\in u^+} w(v) \leq \frac{W-w(v)}{k}$
+\end{block}
+
+\centering
+
+\includegraphics[scale=0.5]{Images/inround_reversed.png}
+
+\end{frame}
+
+\begin{frame}{Lemma proof : two definitions}
+\centering
+\includegraphics[scale=0.7]{Images/inround_reversed_def.png}
+
+\pause
+
+$$\phi(x) = \sum_{v \in x^+} w(v)$$
+\end{frame}
+
+\begin{frame}{Lemma proof : some maths}
+
+\centering
+Thus $\forall x, \sum_{i=0}^{k} \phi(f^{(i)}(x)) \leq W - w(x)$
+
+\pause
+
+\hspace{1cm}
+
+\includegraphics[scale=0.5]{Images/inround_reversed_cycle.png}
+
+\pause
+$k\sum_{x\in V(C)} \phi(x) \leq W|C|-\sum_{x\in V(C)} w(x)$
+
+\pause
+
+\hspace{1cm}
+
+Which implies $ k\phi(x)+w(x)\leq W $
+
+\end{frame}
+
+\begin{frame}{Concluding the proof of our theorem}
+\begin{block}{Lemma}
+Let $k>2$, $D$ a strong out-round oriented graph with no $C_k$ and $w : V(D) \rightarrow \mathbb{R}^{+}$ and $W = \sum_{u \in V(D)} u$.
+
+$\text{There exists }u\text{ such that }\sum_{v\in u^+} w(v) \leq \frac{W-w(v)}{k}$
+\end{block}
+
+\centering
+\includegraphics[scale=0.5]{Images/decomposition_reversed.png}
+
+\end{frame}
+
+\section{What comes next ?}
+
+\begin{frame}{A (complicated) decomposition theorem}
+
+\begin{theorem}\label{thm:k12k21}
+Let $D$ a connected locally semicomplete digraph, then either :
+\begin{itemize}
+    \item $D$ is semicomplete with a universal vertex.
+    \item There exists a partition of $V(D)$ into $k\geq 2$ subsets each inducing strong connected semicomplete digraphs such that the digraph obtained by contracting every member of the partition is a round oriented graph.
+    \item there exists a partition of $V(D)$ into four sets $E$, $F$, $G$ and $H$ such that :
+        \begin{itemize}
+            \item $F$ and $H$ are non empty, and one of $E$ and $G$ is non empty.
+            \item $D[E]$, $D[F]$, $D[G]$ and $D[H]$ are semicomplete;
+            \item $E$ strictly out-dominates $F$, $F$ strictly out-dominates $G$, $G$ out-dominates $H$ and $H$ out-dominates $E$.
+            \item $\forall x\in G,\ x^+\cap E\neq\emptyset$  and $x^-\cap E\neq\emptyset$
+        \end{itemize}
+\end{itemize}
+\end{theorem}
+\end{frame}
+
+\begin{frame}{What this means}
+	\begin{columns}
+		\column{0.5\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{Images/4blobs.pdf}
+
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{Images/decomposition.png}
+    \end{columns}
 \end{frame}
 
 \end{document}
