@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.8)  18 JUN 2021 08:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.8.8)  18 JUN 2021 08:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,7 +986,7 @@ Package pdftricks Warning: ****************************************
 (pdftricks)                [psTricks support in PDF (CVR, ACL)]
 (pdftricks)                ****************************************.
 
-runsystem(touch /tmp/w18-test-2021618498)...disabled (restricted).
+runsystem(touch /tmp/w18-test-2021618518)...disabled (restricted).
 
 
 Package pdftricks Warning: ****************************************
@@ -1565,13 +1565,15 @@ File: Images/4blobs.pdf Graphic file (type pdf)
 <use Images/4blobs.pdf>
 Package pdftex.def Info: Images/4blobs.pdf  used on input line 1068.
 (pdftex.def)             Requested size: 106.4184pt x 106.4184pt.
-File: Images/decomposition.png Graphic file (type png)
-<use Images/decomposition.png>
-Package pdftex.def Info: Images/decomposition.png  used on input line 1068.
+<Images/decomposition_round.png, id=387, 307.1475pt x 293.4162pt>
+File: Images/decomposition_round.png Graphic file (type png)
+<use Images/decomposition_round.png>
+Package pdftex.def Info: Images/decomposition_round.png  used on input line 106
+8.
 (pdftex.def)             Requested size: 92.14496pt x 88.02553pt.
  [60
 
- <./Images/4blobs.pdf>]
+ <./Images/4blobs.pdf> <./Images/decomposition_round.png>]
 \tf@nav=\write7
 \openout7 = `template.nav'.
 
@@ -1583,7 +1585,8 @@ Package pdftex.def Info: Images/decomposition.png  used on input line 1068.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1070.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1070.
- (./template.aux)
+
+(./template.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1070.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1070.
 
@@ -1591,10 +1594,10 @@ Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: F1B090E9C45153FDED9B8BE79728DE27;245.
  ) 
 Here is how much of TeX's memory you used:
- 26911 strings out of 481239
- 531625 string characters out of 5920378
+ 26917 strings out of 481239
+ 531817 string characters out of 5920378
  785226 words of memory out of 5000000
- 41348 multiletter control sequences out of 15000+600000
+ 41353 multiletter control sequences out of 15000+600000
  625529 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,18n,106p,775b,1093s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1614,10 +1617,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/helvetic/uhvro8a.pfb>
-Output written on template.pdf (60 pages, 491995 bytes).
+Output written on template.pdf (60 pages, 511888 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
+ 488 PDF objects out of 1000 (max. 8388607)
  359 compressed objects within 4 object streams
  126 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 words of extra memory for PDF output out of 10000 (max. 10000000)
 
